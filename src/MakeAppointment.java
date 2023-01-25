@@ -1,10 +1,14 @@
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+
+//import junit.framework.Assert;
 
 class MakeAppointment {
 
@@ -31,13 +35,17 @@ class MakeAppointment {
 		
 		String result = driver.findElement(By.id("comment")).getText();
 		
-		if(result.equalsIgnoreCase("Heart"))
-			System.out.print("Pass");
-		else
-			System.out.print("Fail");
+	
+		assertEquals("Heart",result);
+		
+		String title = driver.getTitle();
+		System.out.print(title);
+		
 		
 		Thread.sleep(5000);
 		driver.quit();
 		
 	}
 }
+
+
